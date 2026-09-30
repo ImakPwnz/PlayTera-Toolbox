@@ -16,7 +16,7 @@ does not claim ownership or a new blanket license for their work.
 
 ## Included sources
 
-- Recognition/routing support for the PlayTera client integration, which uses
+- Routing support for the PlayTera client integration, which uses
   `cabalmain.exe` and the existing game-process ExitLag session.
 - The native transport helper and its IPC data structure.
 - The separate Toolbox launcher wrapper and empty-directory NSIS installer.
@@ -33,7 +33,7 @@ private launcher sources, player data or operational logs are published here.
 Existing client-interface DLLs, scanner binaries and the full upstream Toolbox
 are withheld pending evidence of redistribution rights and required source
 coverage. Third-party dependency license texts do not establish a license for
-the surrounding proprietary component.
+the surrounding component.
 
 ## Release gates
 
