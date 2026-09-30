@@ -1,0 +1,31 @@
+PlayTera Toolbox 1.0.0 - lokaler Verteilungskandidat
+
+Modifizierte Ausgabe der vorhandenen TERA Toolbox fuer PlayTera 46.05.
+Originalautoren: Caali, Pinkie Pie, meishu, JKQ und weitere Autoren der
+mitgelieferten Komponenten. PlayTera beansprucht keine Urheberschaft an der
+urspruenglichen Toolbox, Electron oder den Drittanbieterkomponenten.
+Vorhandene Lizenztexte und Copyright-Hinweise sind unveraendert enthalten.
+Quellbasis: tera-classic-toolbox/tera-toolbox-playtera.
+PlayTera-Aenderungen: cabalmain-Erkennung, bestehende ExitLag-Sitzung als Transport,
+Handshake-Pufferung, eigener Starthelfer, Branding und signierte Selbstupdates.
+
+Start: PlayTeraToolbox.exe; alternativ ueber den angepassten Launcher-Mod-Manager.
+Toolbox vor Launcher/Spiel starten. Keine bestehenden Spiel-DLLs automatisch
+ersetzen: der passende Client-DLL-Satz wird als getrenntes Spielupdate verteilt.
+Installation nur in einen leeren Ordner; vorhandene Toolbox und Mods bleiben
+unveraendert. Updates bearbeiten keine config.json und keine Benutzer-Mods.
+Updates kommen nur aus ImakPwnz/PlayTera-Toolbox auf GitHub Releases und brauchen eine
+gueltige, an Toolbox gebundene Ed25519-Signatur. Kein Fremdquellen-Fallback.
+Module sind ausfuehrbarer Code: nur vertrauenswuerdige Module verwenden.
+
+Wichtige Grenze vor oeffentlicher Freigabe:
+Die fuer bestehende native ABIs erforderliche Electron-Laufzeit 16.0.2 stammt
+bytegleich aus dem hashgeprueften bisherigen Installer und ist veraltet.
+Ein Wechsel auf eine gepflegte Electron-Version erfordert passende Neubauten
+der nativen Scanner-/Kryptokomponenten und einen gesonderten Kompatibilitaetstest.
+Dieser lokale Kandidat ist weder Authenticode-signiert noch veroeffentlicht.
+Lizenz-/Quellcodebereitstellung aller Komponenten vor einer Veroeffentlichung
+abschliessend pruefen, insbesondere der vorhandenen Scanner-/Launcher-Binaries.
+Alle bisherigen Lizenztexte bleiben im Paket; fehlende Rechte werden nicht
+durch neues Branding ersetzt. Keine Spielschutz-/Anti-Cheat-Kompatibilitaet aus
+isolierten Tests ableiten. Support: https://playtera.to
