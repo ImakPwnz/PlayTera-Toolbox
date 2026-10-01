@@ -27,3 +27,10 @@
 *.p12
 mods/*/settings.json
 mods/*/config.json
+
+# Private game/ExitLag integration is outside this public repository.
+/tools/ExitLagD3D9Proxy/
+/tools/ToolboxExitLagTransport/
+/bin/playtera-exitlag.js
+d3d9.dll
+exitlag.dll
