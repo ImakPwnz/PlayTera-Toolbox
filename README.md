@@ -1,53 +1,41 @@
 # PlayTera Toolbox
 
-PlayTera-specific compatibility and distribution tools for the TERA Toolbox.
+Toolbox distribution and installer tooling for PlayTera.
 
-## Publication status
+This repository contains only Toolbox updater configuration, updater source,
+the Toolbox start wrapper and installer/build tooling. It does not contain the
+d3d9 project, ExitLag integration sources, the ExitLag SDK, game DLLs, credentials,
+private launcher sources, operational data or player data.
 
-This repository currently contains the PlayTera-authored integration and build
-sources only. It is **not yet a complete or installable Toolbox distribution**.
-There is no public installer release and no active self-update feed.
+## Installer
+
+A complete local installer candidate exists, but no public installer release is
+available yet. It includes the Toolbox runtime and required Toolbox-side
+components, not game DLLs or SDK keys. Self-updates remain disabled.
+
+The intended release asset is `v1.0.0/PlayTeraToolboxSetup.exe`. The separate
+PlayTera launcher must verify its final size and SHA-256 before execution.
+Publishing this repository does not update the production launcher.
+
+## Build and release status
+
+These files are not the full Toolbox core. The local build requires a separately
+provided Toolbox source tree, verified compatible Electron runtime, Visual
+Studio C++ tools and verified NSIS compiler. Integration dependencies are kept
+outside this public source repository.
 
 The complete local candidate is based on
 `tera-classic-toolbox/tera-toolbox-playtera`, commit
 `0d020efba36050019f7a36d3ab512aa397a628e1`. Original Toolbox authors include
-Caali, Pinkie Pie, meishu, JKQ and other component contributors. This repository
-does not claim ownership or a new blanket license for their work.
+Caali, Pinkie Pie, meishu, JKQ and other component contributors. Existing third-
+party licenses and notices must be preserved; no blanket third-party ownership
+or redistribution permission is asserted here.
 
-## Included sources
+Player-release prerequisites remain open: evidence of redistribution rights
+and required source/notice coverage for the upstream core, client-interface
+DLLs and scanners; obsolete Electron runtime/native ABI review; complete-
+installer game acceptance; final binary signing and launcher hash pinning.
 
-- Routing support for the PlayTera client integration, which uses
-  `cabalmain.exe` and the existing game-process ExitLag session.
-- The native transport helper and its IPC data structure.
-- The separate Toolbox launcher wrapper and empty-directory NSIS installer.
-- The bounded, signature-verified core updater and offline manifest signer.
-
-These are integration sources, not a replacement for the missing upstream core.
-Build scripts require separately supplied compatible dependencies and tools.
-No GitHub Actions workflows or automatic builds are enabled by these files.
-
-## Not included
-
-No credentials, private signing keys, ExitLag SDK, game DLLs, game/server files,
-private launcher sources, player data or operational logs are published here.
-Existing client-interface DLLs, scanner binaries and the full upstream Toolbox
-are withheld pending evidence of redistribution rights and required source
-coverage. Third-party dependency license texts do not establish a license for
-the surrounding component.
-
-## Release gates
-
-Before a player-facing installer is published:
-
-1. Establish redistribution rights and source/notice obligations for the
-   upstream Toolbox, client-interface DLLs and scanner components.
-2. Resolve the obsolete Electron 16.0.2 runtime and compatible native ABI.
-3. Accept a private complete-installer game test with the matching separately
-   distributed PlayTera client integration.
-4. Sign the final installer, re-pin its final hash/size and sign the launcher
-   and release metadata through the separate operator release process.
-
-Self-updates remain disabled until a separately verified signed feed is ready.
-Publishing this source repository does not activate any production changes.
+No Actions workflows or automatic builds are included.
 
 Support: https://playtera.to
