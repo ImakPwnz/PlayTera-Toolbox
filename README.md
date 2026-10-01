@@ -1,41 +1,56 @@
 # PlayTera Toolbox
 
-Toolbox distribution and installer tooling for PlayTera.
+Toolbox distribution and installer tooling for PlayTera (client 46.05).
 
-This repository contains only Toolbox updater configuration, updater source,
-the Toolbox start wrapper and installer/build tooling. It does not contain the
-d3d9 project, ExitLag integration sources, the ExitLag SDK, game DLLs, credentials,
-private launcher sources, operational data or player data.
+## Download
 
-## Installer
+[Download PlayTeraToolboxSetup.exe](https://github.com/ImakPwnz/PlayTera-Toolbox/releases/download/v1.0.0/PlayTeraToolboxSetup.exe)
 
-A complete local installer candidate exists, but no public installer release is
-available yet. It includes the Toolbox runtime and required Toolbox-side
-components, not game DLLs or SDK keys. Self-updates remain disabled.
+[Release notes and checksums](https://github.com/ImakPwnz/PlayTera-Toolbox/releases/tag/v1.0.0)
 
-The intended release asset is `v1.0.0/PlayTeraToolboxSetup.exe`. The separate
-PlayTera launcher must verify its final size and SHA-256 before execution.
-Publishing this repository does not update the production launcher.
+Version 1.0.0 is a **pre-release**, not a completed production rollout.
+Installer: 65,383,247 bytes; SHA-256:
+`a66f485bd504809694061abd20e08c49935bbb4efb4e54e53f8566191d22de01`.
 
-## Build and release status
+Install into a new, empty normal folder, preferably
+`<game folder>\PlayTera Toolbox`. Existing Toolbox installations and player mods
+are not overwritten. Start `PlayTeraToolbox.exe` before launching the game.
 
-These files are not the full Toolbox core. The local build requires a separately
-provided Toolbox source tree, verified compatible Electron runtime, Visual
-Studio C++ tools and verified NSIS compiler. Integration dependencies are kept
-outside this public source repository.
+The installer contains Toolbox runtime files and dependencies. It does not
+contain game DLLs, d3d9/ExitLag project sources, an ExitLag SDK, private keys,
+private launcher sources, operational data or player data. The matching game
+client integration is supplied separately by PlayTera.
 
-The complete local candidate is based on
-`tera-classic-toolbox/tera-toolbox-playtera`, commit
-`0d020efba36050019f7a36d3ab512aa397a628e1`. Original Toolbox authors include
-Caali, Pinkie Pie, meishu, JKQ and other component contributors. Existing third-
-party licenses and notices must be preserved; no blanket third-party ownership
-or redistribution permission is asserted here.
+## Validation and limitations
 
-Player-release prerequisites remain open: evidence of redistribution rights
-and required source/notice coverage for the upstream core, client-interface
-DLLs and scanners; obsolete Electron runtime/native ABI review; complete-
-installer game acceptance; final binary signing and launcher hash pinning.
+- Twelve isolated installation tests passed; 222 installed files verified.
+- The installer is not Authenticode-signed. Do not disable Windows security
+  checks to install it.
+- The bundled Electron 16.0.2 runtime is obsolete. A supported runtime and
+  compatible native components remain follow-up work.
+- Complete-installer game acceptance remains pending; isolated tests do not
+  establish compatibility with game protection or anti-cheat systems.
+- Toolbox core self-updates remain disabled. No unsigned stable feed is enabled.
+  Module updates are separate; modules execute code.
+- This GitHub release does not distribute or activate a new production launcher.
+  The prepared launcher verifies the fixed URL, final installer hash and size.
 
-No Actions workflows or automatic builds are included.
+## Sources and attribution
+
+Current source branch contains only Toolbox distribution/updater/build tools.
+The complete installer includes the Toolbox JavaScript sources and existing
+component notices. The release also provides the exact bundled Toolbox network
+proxy JavaScript sources and GPL-3.0 license as `tera-network-proxy-source.zip`.
+Excluded integration sources are not reintroduced into the current branch.
+Earlier commits have not been rewritten.
+
+Basis: `tera-classic-toolbox/tera-toolbox-playtera`, commit
+`0d020efba36050019f7a36d3ab512aa397a628e1`. Original authors include Caali,
+Pinkie Pie, meishu, JKQ and other component contributors. Existing component
+licenses/notices are retained; no blanket third-party ownership is claimed.
+
+Build tools require a separate Toolbox source tree, compatible verified runtime,
+Visual Studio C++ tools and a verified NSIS compiler. No Actions workflows or
+automatic builds are included.
 
 Support: https://playtera.to
